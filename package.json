@@ -1,0 +1,26 @@
+{
+  "name": "rassal",
+  "version": "1.0.0",
+  "description": "Simplistic presentations",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jdichev/rassal.git"
+  },
+  "keywords": [
+    "simple",
+    "presentations"
+  ],
+  "author": "Jordan Dichev (jdichev)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jdichev/rassal/issues"
+  },
+  "homepage": "https://github.com/jdichev/rassal",
+  "dependencies": {
+    "http-server": "^0.7.3"
+  }
+}
