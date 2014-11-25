@@ -4,7 +4,7 @@
     slideIndex;
 
   var initialFontSize = 1,
-  initialFontUnit = 'rem';
+  initialFontUnit = 'px';
 
   function showSlide(index) {
     if (slide !== undefined) {

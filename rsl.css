@@ -1,0 +1,59 @@
+
+body {
+  font-family: sans-serif;
+  font-weight: bold;
+  letter-spacing: -0.1rem;
+  line-height: 0.9;
+  padding: 40px;
+  color: dodgerblue;
+  box-sizing: border-box;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body * {
+  margin: 0;
+}
+
+h1 {
+  padding: 0 0 .5em;
+}
+
+ol, ul {
+  list-style-position: inside;
+  font-weight: normal;
+  /*list-style: none;*/
+}
+
+li {
+  /*position: relative;*/
+  line-height: 130%;
+  padding-bottom: 0.3em;
+}
+
+/*li:before {
+  display: none;
+  position: relative;
+  margin-left: -2.5rem;
+  color: #ddd;
+}
+
+ul > li:before {
+  content: '\2022';
+  vertical-align: middle;
+}
+
+ol {
+  counter-reset: li;
+}
+
+ol > li:before {
+  font-size: 65%;
+  content:counter(li); /* Use the counter as content */
+  counter-increment:li; /* Increment the counter by 1 */
+}*/
