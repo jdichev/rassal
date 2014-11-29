@@ -4,6 +4,7 @@
     slideIndex;
 
   var initialFontSize = 1,
+      step = 10,
   initialFontUnit = 'px';
 
   function showSlide(index) {
@@ -17,30 +18,23 @@
 
     d.body.style.fontSize = initialFontSize + initialFontUnit;
 
-    slide.style.display = '';
+    slide.style.display = 'inline-block';
 
     var w = d.documentElement.clientWidth;
     console.log('w', w);
-
     var h = d.documentElement.clientHeight;
     console.log('h', h);
 
-    var sw = slide.offsetWidth;
-    console.log('sw', sw);
-
-    var sh = slide.offsetHeight;
-    console.log('sh', sh);
-
-    var bodyPadding = (w - sw) / 2;
-    var totalHeight = h - (bodyPadding * 2);
-
     while (true) {
-      initialFontSize += 1;
-      d.body.style.fontSize = initialFontSize + initialFontUnit;
+      initialFontSize += step;
+      slide.style.fontSize = initialFontSize + initialFontUnit;
 
-      if (totalHeight < slide.offsetHeight || sw < slide.offsetWidth) {
-        initialFontSize -= 1;
-        d.body.style.fontSize = initialFontSize + initialFontUnit;
+      if (h < slide.offsetHeight || w < slide.offsetWidth) {
+        console.log('hit', initialFontSize, slide.offsetWidth, slide.offsetHeight);
+        initialFontSize -= step;
+        slide.style.fontSize = initialFontSize + initialFontUnit;
+        console.log('fix', initialFontSize, slide.offsetWidth, slide.offsetHeight);
+        slide.style.marginTop = ((h - slide.offsetHeight) / 2) + 'px';
         break;
       }
     }
