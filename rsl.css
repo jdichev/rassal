@@ -2,11 +2,13 @@
 body {
   font-family: sans-serif;
   font-weight: bold;
-  letter-spacing: -0.1rem;
+  letter-spacing: -1px;
   color: dodgerblue;
+  /*color: hotpink;*/
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  background: floralwhite;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -22,19 +24,24 @@ body * {
 }
 
 .rsl-slide {
+  margin: 0;
   line-height: 0.97;
-  padding: 3rem;
+  padding: 40px;
+  float: left;
 }
 
-h1 {
-  padding: 0 0 .5em;
+h1, h2, h3, h4, h5 {
+  vertical-align: top;
+  top: 0;
+  left: 0;
+  margin-bottom: 0.5em;
 }
 
 ol, ul {
   list-style-position: inside;
   font-weight: normal;
   padding: 0;
-  margin-left: 1rem;
+  margin-left: 30px;
 }
 
 li {

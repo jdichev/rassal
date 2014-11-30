@@ -4,7 +4,7 @@
     slideIndex;
 
   var initialFontSize = 1,
-      step = 10,
+      step = 5,
   initialFontUnit = 'px';
 
   function showSlide(index) {
@@ -16,24 +16,26 @@
 
     initialFontSize = 1;
 
-    d.body.style.fontSize = initialFontSize + initialFontUnit;
+    slide.style.fontSize = initialFontSize + initialFontUnit;
 
-    slide.style.display = 'inline-block';
+    slide.style.width = 'auto';
+    slide.style.display = '';
 
     var w = d.documentElement.clientWidth;
-    console.log('w', w);
+    //console.log('w', w);
     var h = d.documentElement.clientHeight;
-    console.log('h', h);
+    //console.log('h', h);
 
     while (true) {
       initialFontSize += step;
       slide.style.fontSize = initialFontSize + initialFontUnit;
 
       if (h < slide.offsetHeight || w < slide.offsetWidth) {
-        console.log('hit', initialFontSize, slide.offsetWidth, slide.offsetHeight);
+        //console.log('rect', slide.getBoundingClientRect());
+        //console.log('hit', initialFontSize, slide.offsetWidth, slide.offsetHeight);
         initialFontSize -= step;
         slide.style.fontSize = initialFontSize + initialFontUnit;
-        console.log('fix', initialFontSize, slide.offsetWidth, slide.offsetHeight);
+        //console.log('fix', initialFontSize, slide.offsetWidth, slide.offsetHeight);
         slide.style.marginTop = ((h - slide.offsetHeight) / 2) + 'px';
         break;
       }
