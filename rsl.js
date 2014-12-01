@@ -1,11 +1,12 @@
 (function (w, d) {
   var slides,
-    slide,
-    slideIndex;
-
-  var initialFontSize = 1,
+      slide,
+      slideIndex,
+      fontSize = 1,
       step = 5,
-  initialFontUnit = 'px';
+      fontSizeUnit = 'px',
+      viewPortWidth,
+      viewPortHeight;
 
   function showSlide(index) {
     if (slide !== undefined) {
@@ -13,30 +14,20 @@
     }
 
     slide = slides[index];
+    fontSize = 1;
 
-    initialFontSize = 1;
-
-    slide.style.fontSize = initialFontSize + initialFontUnit;
-
+    slide.style.fontSize = fontSize + fontSizeUnit;
     slide.style.width = 'auto';
     slide.style.display = '';
 
-    var w = d.documentElement.clientWidth;
-    //console.log('w', w);
-    var h = d.documentElement.clientHeight;
-    //console.log('h', h);
-
     while (true) {
-      initialFontSize += step;
-      slide.style.fontSize = initialFontSize + initialFontUnit;
+      fontSize += step;
+      slide.style.fontSize = fontSize + fontSizeUnit;
 
-      if (h < slide.offsetHeight || w < slide.offsetWidth) {
-        //console.log('rect', slide.getBoundingClientRect());
-        //console.log('hit', initialFontSize, slide.offsetWidth, slide.offsetHeight);
-        initialFontSize -= step;
-        slide.style.fontSize = initialFontSize + initialFontUnit;
-        //console.log('fix', initialFontSize, slide.offsetWidth, slide.offsetHeight);
-        slide.style.marginTop = ((h - slide.offsetHeight) / 2) + 'px';
+      if (viewPortHeight < slide.offsetHeight || viewPortWidth < slide.offsetWidth) {
+        fontSize -= step;
+        slide.style.fontSize = fontSize + fontSizeUnit;
+        slide.style.marginTop = ((viewPortHeight - slide.offsetHeight) / 2) + 'px';
         break;
       }
     }
@@ -44,23 +35,21 @@
 
   function processHash() {
     slideIndex = +d.location.hash.replace('#', '');
-    console.log('slideIndex', slideIndex);
     d.location.hash = '' + slideIndex;
   }
 
   d.onkeydown = function (e) {
-
     e = e || window.event;
 
-    if (e.keyCode == '37') {
-      // left
+    if (e.keyCode === 37 || e.keyCode === 38) {
+      // left || up
       if (slideIndex > 0) {
         slideIndex -= 1;
         w.location.hash = slideIndex;
       }
     }
-    else if (e.keyCode == '39') {
-      // right
+    else if (e.keyCode === 39 || e.keyCode === 40) {
+      // right || down
       if (slideIndex < slides.length - 1) {
         slideIndex += 1;
         w.location.hash = slideIndex;
@@ -70,11 +59,13 @@
 
   w.onhashchange = function () {
     processHash();
-
     showSlide(slideIndex);
   };
 
   w.onload = function () {
+    viewPortWidth = d.documentElement.clientWidth;
+    viewPortHeight = d.documentElement.clientHeight;
+
     slides = d.querySelectorAll('.rsl-slide');
 
     for (var i = 0, slidesLength = slides.length; i < slidesLength; i += 1) {
@@ -82,7 +73,6 @@
     }
 
     processHash();
-
     showSlide(slideIndex);
   };
 })(window, document);
