@@ -1,15 +1,18 @@
 
 body {
-  font-family: sans-serif;
+  /*font-family: sans-serif;*/
+  font-family: droid_sansregular, sans-serif;
   font-weight: bold;
-  letter-spacing: -2px;
-  color: dodgerblue;
+  /*letter-spacing: -0.15em;*/
+  /*color: dodgerblue;*/
   /*color: hotpink;*/
+  color: #A6E22E;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  background: #272822;
   /*background: floralwhite;*/
-  background: whitesmoke;
+  /*background: whitesmoke;*/
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -17,6 +20,7 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: relative;
 }
 
 body * {
@@ -26,9 +30,22 @@ body * {
 
 .rsl-slide {
   margin: 0;
-  line-height: 0.97;
+  line-height: 1;
   padding: 40px;
   float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  visibility: hidden;
+  opacity: 0;
+  cursor: default;
+}
+
+.rsl-slide.rsl-visible {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
 }
 
 h1, h2, h3, h4, h5 {
@@ -36,6 +53,7 @@ h1, h2, h3, h4, h5 {
   top: 0;
   left: 0;
   margin-bottom: 0.5em;
+  font-family: droid_sansbold;
 }
 
 ol, ul {

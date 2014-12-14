@@ -8,9 +8,22 @@
       viewPortWidth,
       viewPortHeight;
 
+
+  // Find the right method, call on correct element
+  function launchFullScreen(element) {
+    if(element.requestFullScreen) {
+      element.requestFullScreen();
+    } else if(element.mozRequestFullScreen) {
+      element.mozRequestFullScreen();
+    } else if(element.webkitRequestFullScreen) {
+      element.webkitRequestFullScreen();
+    }
+  }
+
   function showSlide(index) {
     if (slide !== undefined) {
-      slide.style.display = 'none';
+      //slide.style.visibility = 'hidden';
+      slide.classList.remove('rsl-visible');
     }
 
     slide = slides[index];
@@ -18,7 +31,8 @@
 
     slide.style.fontSize = fontSize + fontSizeUnit;
     slide.style.width = 'auto';
-    slide.style.display = '';
+    //slide.style.visibility = 'visible';
+    slide.classList.add('rsl-visible');
 
     while (true) {
       fontSize += step;
@@ -69,10 +83,15 @@
     slides = d.querySelectorAll('.rsl-slide');
 
     for (var i = 0, slidesLength = slides.length; i < slidesLength; i += 1) {
-      slides[i].style['display'] = 'none';
+      //slides[i].style['visibility'] = 'hidden';
+      slides[i].classList.remove('rsl-visible');
     }
 
     processHash();
     showSlide(slideIndex);
+
+    d.querySelector('body').addEventListener('dblclick', function () {
+      launchFullScreen(document.body);
+    });
   };
 })(window, document);
