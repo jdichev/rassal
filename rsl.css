@@ -1,51 +1,43 @@
 
 body {
-  /*font-family: sans-serif;*/
-  font-family: droid_sansregular, sans-serif;
+  font-family: "helvetica neue", sans-serif;
   font-weight: bold;
-  /*letter-spacing: -0.15em;*/
-  /*color: dodgerblue;*/
-  /*color: hotpink;*/
-  color: #A6E22E;
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  background: #272822;
-  /*background: floralwhite;*/
-  /*background: whitesmoke;*/
 
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+  background: #272822;
+  /*color: #A6E22E;*/
+  color: #FDF5A9;
+
   position: relative;
+
+  user-select: none;
+
+  cursor: default;
 }
 
-body * {
+* {
   margin: 0;
   padding: 0;
+
+  box-sizing: border-box;
 }
 
 .rsl-slide {
-  margin: 0;
-  line-height: 1;
-  padding: 40px;
-  float: left;
+  padding: 80px 120px;
+
   position: absolute;
   top: 0;
   left: 0;
 
+  line-height: 1.1;
+
   visibility: hidden;
   opacity: 0;
-  cursor: default;
 }
 
 .rsl-slide.rsl-visible {
   visibility: visible;
   opacity: 1;
-  transition: opacity 0.2s linear;
+  /*transition: opacity 0.2s linear;*/
 }
 
 h1, h2, h3, h4, h5 {
@@ -53,7 +45,6 @@ h1, h2, h3, h4, h5 {
   top: 0;
   left: 0;
   margin-bottom: 0.5em;
-  font-family: droid_sansbold;
 }
 
 ol, ul {
