@@ -78,10 +78,5 @@
     }
 
     processHash();
-
-    d.querySelector('body').addEventListener('dblclick', function () {
-
-      d.querySelector('.rsl-visible').contentEditable = true
-    });
   };
 })(window, document);
