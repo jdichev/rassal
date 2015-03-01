@@ -38,8 +38,10 @@
   }
 
   function processHash() {
-    slideIndex = +d.location.hash.replace('#', '');
-    d.location.hash = '' + slideIndex;
+    var hash = d.location.hash;
+
+    slideIndex = +hash.replace('#', '');
+    hash = '' + slideIndex;
 
     showSlide(slideIndex);
   }
