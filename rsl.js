@@ -1,6 +1,7 @@
 (function (w, d) {
   var slides,
     slide,
+    style,
     slideIndex,
     fontSize = 1,
     step = 5,
@@ -15,21 +16,22 @@
 
     // re-assign slide to be pointing to current one
     slide = slides[index];
+    style = slide.style;
 
     // reset font-size
     fontSize = 1;
 
-    slide.style.fontSize = fontSize + fontSizeUnit;
-    slide.style.width = 'auto';
+    style.fontSize = fontSize + fontSizeUnit;
+    style.width = 'auto';
 
     while (true) {
       fontSize += step;
-      slide.style.fontSize = fontSize + fontSizeUnit;
+      style.fontSize = fontSize + fontSizeUnit;
 
       if (viewPortHeight < slide.offsetHeight || viewPortWidth < slide.offsetWidth) {
         fontSize -= step;
-        slide.style.fontSize = fontSize + fontSizeUnit;
-        slide.style.marginTop = ((viewPortHeight - slide.offsetHeight) / 2) + 'px';
+        style.fontSize = fontSize + fontSizeUnit;
+        style.marginTop = ((viewPortHeight - slide.offsetHeight) / 2) + 'px';
         break;
       }
     }
