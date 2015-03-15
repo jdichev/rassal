@@ -1,6 +1,6 @@
 
 body {
-  font-family: "helvetica neue", sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;
 
   background: #272822;
@@ -31,14 +31,20 @@ body {
   line-height: 1.1;
 
   visibility: hidden;
-  opacity: 0;
 }
 
 .rsl-slide.rsl-visible {
   visibility: visible;
-  opacity: 1;
-  /*transition: opacity 0.2s linear;*/
+
+  /*-webkit-animation: slide 0.5s forwards;*/
+  /*-webkit-animation-delay: 0s;*/
 }
+
+/*@-webkit-keyframes slide {*/
+  /*0% {*/
+    /*left: -100%;*/
+  /*}*/
+/*}*/
 
 h1, h2, h3, h4, h5 {
   vertical-align: top;
