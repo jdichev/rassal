@@ -1,0 +1,13 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.rsl-slide {
+  line-height: 1.1;
+
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
