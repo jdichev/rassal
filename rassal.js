@@ -1,16 +1,39 @@
+var slides = document.querySelectorAll('.rsl-slide');
+var hash = document.location.hash;
+var slideIndex = +hash.replace('#', '');
 
-let viewPortWidth = document.documentElement.clientWidth;
-
-let viewPortHeight = document.documentElement.clientHeight;
-
-function styleSlide(slide) {
-  slide.style.height = viewPortHeight + 'px';
+function processHash() {
+  hash = document.location.hash;
+  slideIndex = +hash.replace('#', '');
+  showSlide(slideIndex);
 }
 
-let slides = document.querySelectorAll('.rsl-slide');
-
-for (var i = 0, slidesLength = slides.length; i < slidesLength; i += 1) {
-  let slide = slides[i];
-
-  styleSlide(slide);
+function showSlide(index) {
+  console.log(index);
+  slides[index].scrollIntoView({behavior: "smooth"});
 }
+
+processHash();
+
+document.onkeydown = function (e) {
+  e = e || window.event;
+
+  if (e.keyCode === 37 || e.keyCode === 38) {
+    // left || up
+    if (slideIndex > 0) {
+      slideIndex -= 1;
+      window.location.hash = slideIndex;
+    }
+  }
+  else if (e.keyCode === 39 || e.keyCode === 40) {
+    // right || down
+    if (slideIndex < slides.length - 1) {
+      slideIndex += 1;
+      window.location.hash = slideIndex;
+    }
+  }
+};
+
+window.onhashchange = function () {
+  processHash();
+};
