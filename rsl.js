@@ -71,6 +71,39 @@
     processHash();
   };
 
+  window.handleResize = function () {
+        viewPortWidth = d.documentElement.clientWidth;
+        viewPortHeight = d.documentElement.clientHeight;
+
+        // re-assign slide to be pointing to current one
+        slide = document.querySelector('.rsl-visible');
+        style = slide.style;
+    
+        // reset font-size
+        var fontSize = 1;
+    
+        style.fontSize = fontSize + fontSizeUnit;
+        style.width = 'auto';
+    
+        while (true) {
+          fontSize += step;
+          style.fontSize = fontSize + fontSizeUnit;
+    
+          if (viewPortHeight < slide.offsetHeight || viewPortWidth < slide.offsetWidth) {
+            fontSize -= step;
+            style.fontSize = fontSize + fontSizeUnit;
+            style.marginTop = ((viewPortHeight - slide.offsetHeight) / 2) + 'px';
+            break;
+          }
+        }
+    
+    
+  }
+
+  window.addEventListener('resize', function (event) {
+    window.handleResize();
+  });
+
   w.onload = function () {
     viewPortWidth = d.documentElement.clientWidth;
     viewPortHeight = d.documentElement.clientHeight;
