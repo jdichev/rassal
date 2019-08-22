@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 Hi there,
 
 This is Rassal, a tool for simple presentations.
