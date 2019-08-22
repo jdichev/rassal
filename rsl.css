@@ -1,0 +1,64 @@
+
+body {
+  font-family: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  /* background: #272822; */
+	background: #222;
+  /*color: #A6E22E;*/
+  /* color: #FDF5A9; */
+	color: #ddd;
+
+  position: relative;
+
+  user-select: none;
+
+  cursor: default;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+.rsl-slide {
+  padding: 40px 80px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  line-height: 1;
+
+  visibility: hidden;
+}
+
+.rsl-slide.rsl-visible {
+  visibility: visible;
+
+  /*-webkit-animation: slide 0.5s forwards;*/
+  /*-webkit-animation-delay: 0s;*/
+}
+
+/*@-webkw*/
+
+h1, h2, h3, h4, h5 {
+  vertical-align: top;
+  top: 0;
+  left: 0;
+  margin-bottom: 0.1em;
+	font-weight: 800;
+}
+
+ol, ul {
+  list-style-position: inside;
+  font-weight: normal;
+  padding: 0;
+  margin-left: 30px;
+}
+
+li {
+  line-height: 130%;
+}
