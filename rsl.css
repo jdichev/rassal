@@ -1,7 +1,7 @@
 
 body {
-  font-family: "Libre Franklin", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-family: sans-serif;
+  letter-spacing: -0.3em;
 
   /* background: #272822; */
 	background: #222;
@@ -60,11 +60,15 @@ h1, h2, h3, h4, h5 {
 
 ol, ul {
   list-style-position: inside;
-  font-weight: normal;
+  /* font-weight: normal; */
   padding: 0;
   margin-left: 30px;
 }
 
 li {
   line-height: 130%;
+}
+
+code {
+  font-family: Menlo, monospace;
 }
