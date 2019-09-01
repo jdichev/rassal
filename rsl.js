@@ -48,7 +48,7 @@
     showSlide(slideIndex);
   }
 
-  d.onkeydown = function (e) {
+  d.onkeyup = function (e) {
     e = e || window.event;
 
     if (e.keyCode === 37 || e.keyCode === 38) {
@@ -66,6 +66,13 @@
       }
     }
   };
+
+	d.onmouseup = function (e) {
+		if (slideIndex < slides.length - 1) {
+			slideIndex += 1;
+			w.location.hash = slideIndex;
+		}
+	};
 
   w.onhashchange = function () {
     processHash();
