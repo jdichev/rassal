@@ -74,6 +74,13 @@
 		}
 	};
 
+	d.ontouchend = function (e) {
+		if (slideIndex < slides.length - 1) {
+			slideIndex += 1;
+			w.location.hash = slideIndex;
+		}
+	};
+
   w.onhashchange = function () {
     processHash();
   };
