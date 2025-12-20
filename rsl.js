@@ -3,11 +3,34 @@
     slide,
     style,
     slideIndex,
-    fontSize = 1,
     step = 5,
     fontSizeUnit = 'px',
     viewPortWidth,
     viewPortHeight;
+
+  function fitSlideToViewport(slideElement) {
+    var slideStyle = slideElement.style;
+    var currentFontSize = 1;
+    var maxIterations = 1000;
+    var iterations = 0;
+
+    slideStyle.fontSize = currentFontSize + fontSizeUnit;
+    slideStyle.width = 'auto';
+
+    while (iterations < maxIterations) {
+      currentFontSize += step;
+      slideStyle.fontSize = currentFontSize + fontSizeUnit;
+
+      if (viewPortHeight < slideElement.offsetHeight || viewPortWidth < slideElement.offsetWidth) {
+        currentFontSize -= step;
+        slideStyle.fontSize = currentFontSize + fontSizeUnit;
+        slideStyle.marginTop = ((viewPortHeight - slideElement.offsetHeight) / 2) + 'px';
+        break;
+      }
+      
+      iterations++;
+    }
+  }
 
   function showSlide(index) {
     if (slide !== undefined) {
@@ -18,23 +41,7 @@
     slide = slides[index];
     style = slide.style;
 
-    // reset font-size
-    fontSize = 1;
-
-    style.fontSize = fontSize + fontSizeUnit;
-    style.width = 'auto';
-
-    while (true) {
-      fontSize += step;
-      style.fontSize = fontSize + fontSizeUnit;
-
-      if (viewPortHeight < slide.offsetHeight || viewPortWidth < slide.offsetWidth) {
-        fontSize -= step;
-        style.fontSize = fontSize + fontSizeUnit;
-        style.marginTop = ((viewPortHeight - slide.offsetHeight) / 2) + 'px';
-        break;
-      }
-    }
+    fitSlideToViewport(slide);
 
     slide.classList.add('rsl-visible');
   }
@@ -67,51 +74,33 @@
     }
   };
 
-	d.onmouseup = function (e) {
-		if (slideIndex < slides.length - 1) {
-			slideIndex += 1;
-			w.location.hash = slideIndex;
-		}
-	};
+  d.onmouseup = function (e) {
+    if (slideIndex < slides.length - 1) {
+      slideIndex += 1;
+      w.location.hash = slideIndex;
+    }
+  };
 
-	d.ontouchend = function (e) {
-		if (slideIndex < slides.length - 1) {
-			slideIndex += 1;
-			w.location.hash = slideIndex;
-		}
-	};
+  d.ontouchend = function (e) {
+    if (slideIndex < slides.length - 1) {
+      slideIndex += 1;
+      w.location.hash = slideIndex;
+    }
+  };
 
   w.onhashchange = function () {
     processHash();
   };
 
   window.handleResize = function () {
-        viewPortWidth = d.documentElement.clientWidth;
-        viewPortHeight = d.documentElement.clientHeight;
+    viewPortWidth = d.documentElement.clientWidth;
+    viewPortHeight = d.documentElement.clientHeight;
 
-        // re-assign slide to be pointing to current one
-        slide = document.querySelector('.rsl-visible');
-        style = slide.style;
-    
-        // reset font-size
-        var fontSize = 1;
-    
-        style.fontSize = fontSize + fontSizeUnit;
-        style.width = 'auto';
-    
-        while (true) {
-          fontSize += step;
-          style.fontSize = fontSize + fontSizeUnit;
-    
-          if (viewPortHeight < slide.offsetHeight || viewPortWidth < slide.offsetWidth) {
-            fontSize -= step;
-            style.fontSize = fontSize + fontSizeUnit;
-            style.marginTop = ((viewPortHeight - slide.offsetHeight) / 2) + 'px';
-            break;
-          }
-        }
-    
-    
+    // re-assign slide to be pointing to current one
+    slide = document.querySelector('.rsl-visible');
+    style = slide.style;
+
+    fitSlideToViewport(slide);
   }
 
   window.addEventListener('resize', function (event) {
