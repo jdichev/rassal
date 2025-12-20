@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/jdichev/rassal",
   "dependencies": {
-    "http-server": "^0.7.3"
+    "http-server": "^14.1.1"
   }
 }
