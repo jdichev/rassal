@@ -1,18 +1,10 @@
 
 body {
   font-family: sans-serif;
-  letter-spacing: -0.3em;
-
-  /* background: #272822; */
 	background: #222;
-  /*color: #A6E22E;*/
-  /* color: #FDF5A9; */
 	color: #ddd;
-
   position: relative;
-
   user-select: none;
-
   cursor: default;
 }
 
@@ -43,12 +35,7 @@ html, body {
 
 .rsl-slide.rsl-visible {
   visibility: visible;
-
-  /*-webkit-animation: slide 0.5s forwards;*/
-  /*-webkit-animation-delay: 0s;*/
 }
-
-/*@-webkw*/
 
 h1, h2, h3, h4, h5 {
   vertical-align: top;
@@ -60,7 +47,6 @@ h1, h2, h3, h4, h5 {
 
 ol, ul {
   list-style-position: inside;
-  /* font-weight: normal; */
   padding: 0;
   margin-left: 30px;
 }
