@@ -56,16 +56,14 @@
   }
 
   d.onkeyup = function (e) {
-    e = e || window.event;
-
-    if (e.keyCode === 37 || e.keyCode === 38) {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
       // left || up
       if (slideIndex > 0) {
         slideIndex -= 1;
         w.location.hash = slideIndex;
       }
     }
-    else if (e.keyCode === 39 || e.keyCode === 40) {
+    else if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
       // right || down
       if (slideIndex < slides.length - 1) {
         slideIndex += 1;
