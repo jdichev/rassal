@@ -9,6 +9,11 @@
     viewPortHeight;
 
   function fitSlideToViewport(slideElement) {
+    if (slideElement.classList.contains('skip-fit')) {
+      console.log('skipping fit for slide ', slideElement);
+      return
+    }
+
     var slideStyle = slideElement.style;
     var currentFontSize = 1;
     var maxIterations = 1000;
@@ -24,10 +29,10 @@
       if (viewPortHeight < slideElement.offsetHeight || viewPortWidth < slideElement.offsetWidth) {
         currentFontSize -= step;
         slideStyle.fontSize = currentFontSize + fontSizeUnit;
-        slideStyle.marginTop = ((viewPortHeight - slideElement.offsetHeight) / 2) + 'px';
+        // slideStyle.marginTop = ((viewPortHeight - slideElement.offsetHeight) / 2) + 'px';
         break;
       }
-      
+
       iterations++;
     }
   }
@@ -72,12 +77,12 @@
     }
   };
 
-  d.onmouseup = function (e) {
-    if (slideIndex < slides.length - 1) {
-      slideIndex += 1;
-      w.location.hash = slideIndex;
-    }
-  };
+  // d.onmouseup = function (e) {
+  //   if (slideIndex < slides.length - 1) {
+  //     slideIndex += 1;
+  //     w.location.hash = slideIndex;
+  //   }
+  // };
 
   d.ontouchend = function (e) {
     if (slideIndex < slides.length - 1) {

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+
+  <link rel="stylesheet" type="text/css" href="rsl.css" />
+
+  <script src="./d3-7.9/dist/d3.min.js"></script>
+
+  <script src="rsl.js"></script>
+</head>
+
+<body>
+  <section class="rsl-slide">
+    <h1>Crise du sans-abrisme dans le comté de King</h1>
+    <h2>Comprendre le défi et la voie à suivre</h2>
+    <p>Décembre 2025</p>
+  </section>
+
+  <section class="rsl-slide">
+    <h1>Lutter contre le sans-abrisme dans le comté de King</h1>
+
+    <p>Explorez des expositions et des analyses détaillées sur les défis persistants du sans-abrisme auxquels est confronté le comté de King, malgré
+      sa prospérité économique.</p>
+
+    <p>Pour une analyse approfondie, visitez notre page d'informations sur le secteur public.</p>
+
+    <p><strong>Note :</strong> Ce contenu est confidentiel et destiné uniquement à un usage autorisé.</p>
+  </section>
+
+  <section class="rsl-slide">
+    <h1>Lutter contre le sans-abrisme à Seattle</h1>
+
+    <ul>
+      <li><strong>Le sans-abrisme s’intensifie</strong>, avec un record de 22 500 ménages touchés l’an dernier — le nombre le plus élevé
+        jamais enregistré.</li>
+      <li><strong>La croissance économique est une arme à double tranchant</strong> : le marché du travail en plein essor de Seattle et la poussée démographique
+        ont dépassé la disponibilité des logements.</li>
+      <li>Bien que le <strong>développement du logement</strong> ait été solide, il <strong>n’a pas suivi la demande</strong>,
+        surtout pour les options abordables.</li>
+      <li>Il est <strong>urgent d’accroître l’offre de logements abordables</strong>, en ciblant les ménages à revenu extrêmement faible (ELI)
+        gagnant moins de 30 % du revenu médian de la région — environ 28 800 $ par an.</li>
+      <li>Développer cette offre <strong>exigera un investissement public nettement accru</strong>, estimé à deux à cinq
+        fois les dépenses locales actuelles.</li>
+      <li>La lutte contre le sans-abrisme <strong>nécessite une stratégie globale</strong>, combinant plusieurs initiatives avec des objectifs clairs
+        à court, moyen et long terme.</li>
+    </ul>
+  </section>
+
+  <section class="rsl-slide">
+    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1em; grid-template-rows: min-content 1fr;">
+      <div style="grid-row: 1 / 3;">
+        <h2>Parmi 37 000 familles à revenu extrêmement faible en difficulté avec le loyer,
+          <br />
+          16 000 manquent actuellement de logement
+          stable et permanent
+        </h2>
+      </div>
+      <div>
+        <h3>Évaluer le besoin</h3>
+      </div>
+      <div>
+        <h3>Estimer l'ampleur du besoin</h3>
+      </div>
+      <div>
+        <ul>
+          <li>
+            La pénurie de logements abordables est un facteur critique du sans-abrisme.
+          </li>
+          <li>
+            Seattle fait face à une pénurie d'options de logement à tous les niveaux d'accessibilité, rendant les programmes de bons moins
+            efficaces.
+          </li>
+          <li>
+            Simplement augmenter les salaires, y compris le salaire minimum, ne résoudra pas le problème car les propriétaires ont tendance
+            à augmenter les loyers à mesure que la demande augmente.
+          </li>
+          <li>
+            La solution la plus pratique est d'augmenter l'offre de logements abordables réglementés.
+          </li>
+        </ul>
+      </div>
+      <div>
+        <p>Le nombre de logements requis varie de :</p>
+        <ul>
+          <li>Ceux sans logement permanent actuellement (16 000)</li>
+          <li>Tous les ménages à faible revenu louant actuellement des appartements au prix du marché qui sont inabordables et instables.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="rsl-slide skip-fit">
+    <div class="size-grid-in-slide"
+      style="display: grid; grid-template-columns: 1fr 300px;">
+      <div id="histogram-container">
+
+      </div>
+
+      <div>
+        <h1>graphique</h1>
+
+        <p>Les données montrent la quantité d'armes vendues par pays.</p>
+        <p>Tempora mutantur, nos et mutamur in illis.</p>
+        <p>Natura nihil frustra facit.</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    setTimeout(() => {
+
+      var startWidth = document.getElementById("histogram-container").offsetWidth;
+      var startHeight = document.getElementById("histogram-container").offsetHeight;
+
+      // set the dimensions and margins of the graph
+      var margin = { top: 30, right: 30, bottom: 70, left: 60 },
+        width = startWidth - margin.left - margin.right,
+        height = startHeight - margin.top - margin.bottom;
+
+      // append the svg object to the body of the page
+      var svg = d3.select("#histogram-container")
+        .append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .append("g")
+        .attr("transform",
+          "translate(" + margin.left + "," + margin.top + ")");
+
+      // Parse the Data
+      d3.csv("./data/7_OneCatOneNum_header.csv").then(function (data) {
+
+        // X axis
+        var x = d3.scaleBand()
+          .range([0, width])
+          .domain(data.map(function (d) { return d.Country; }))
+          .padding(0.2);
+
+        svg.append("g")
+          .attr("transform", "translate(0," + height + ")")
+          .call(d3.axisBottom(x))
+          .selectAll("text")
+          .attr("transform", "translate(-10,0)rotate(-45)")
+          .style("text-anchor", "end")
+          .style("fill", "var(--text-color)");
+
+        // Add Y axis
+        var y = d3.scaleLinear()
+          .domain([0, 13000])
+          .range([height, 0]);
+        svg.append("g")
+          .call(d3.axisLeft(y))
+          .selectAll("text")
+          .style("fill", "var(--text-color)");
+
+        // Bars
+        svg.selectAll("mybar")
+          .data(data)
+          .enter()
+          .append("rect")
+          .attr("x", function (d) { return x(d.Country); })
+          .attr("y", function (d) { return y(d.Value); })
+          .attr("width", x.bandwidth())
+          .attr("height", function (d) { return height - y(d.Value); })
+          .attr("fill", "var(--text-color)")
+
+      })
+
+    }, 1000);
+
+  </script>
+
+</body>
+
+</html>
