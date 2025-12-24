@@ -1,12 +1,15 @@
 :root {
   --bg-color: #222;
   --text-color: #ddd;
-  --slide-padding: 32px;
+  --slide-padding-x: 64px;
+  --slide-padding-y: 48px;
+  --heading-color-1: #5b955f;
+  --heading-color-2: #7c9ced;
 }
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg-color: #fff;
+    --bg-color: #eaeef7;
     --text-color: #333;
   }
 }
@@ -31,7 +34,7 @@ body {
 }
 
 .rsl-slide {
-  padding: var(--slide-padding);
+  padding: var(--slide-padding-y) var(--slide-padding-x);
 
   position: absolute;
   top: 0;
@@ -47,18 +50,27 @@ body {
 }
 
 .size-grid-in-slide {
-  width: calc(100vw - 2 * var(--slide-padding));
-  height: calc(100vh - 2 * var(--slide-padding));
+  width: calc(100vw - 2 * var(--slide-padding-x));
+  height: calc(100vh - 2 * var(--slide-padding-y));
 }
 
 h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-weight: 800;
   margin: 0;
   margin-bottom: 0.72rem;
+}
+
+h1, h2 {
+  color: var(--heading-color-1);
+}
+
+h3, h4 {
+  color: var(--heading-color-2);
 }
 
 ol, ul {
