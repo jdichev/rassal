@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" type="text/css" href="/rsl.css" />
+  <script src="/rsl.js"></script>
+</head>
+
+<body>
+
+  {{slides}}
+
+</body>
+
+</html>
