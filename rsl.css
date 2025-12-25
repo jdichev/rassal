@@ -5,6 +5,7 @@
   --slide-padding-y: 48px;
   --heading-color-1: #5b955f;
   --heading-color-2: #7c9ced;
+  --graphic-color-1: #f17bb1;
 }
 
 @media (prefers-color-scheme: light) {
