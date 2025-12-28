@@ -4,7 +4,8 @@
   "description": "Simplistic presentations",
   "main": "index.html",
   "scripts": {
-    "start": "http-server . -c-1"
+    "start": "http-server . -c-1",
+    "convert-docs": "node scripts/convert-to-rsl-html.js md-docs html-docs"
   },
   "repository": {
     "type": "git",

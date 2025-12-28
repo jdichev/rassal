@@ -68,7 +68,8 @@ h6 {
 
 table {
   border-collapse: collapse;
-  font-size: 0.75em;
+  font-size: 0.8em;
+  margin-block-start: 1em;
 }
 
 td,th {
