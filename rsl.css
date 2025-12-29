@@ -1,8 +1,8 @@
 :root {
   --bg-color: #222;
   --text-color: #ddd;
-  --slide-padding-x: 64px;
-  --slide-padding-y: 48px;
+  --slide-padding-x: 72px;
+  --slide-padding-y: 64px;
   --heading-color-1: #5b955f;
   --heading-color-2: #7c9ced;
   --graphic-color-1: #f17bb1;
@@ -48,6 +48,12 @@ body {
 
 .rsl-slide.rsl-visible {
   visibility: visible;
+}
+
+.auto .rsl-slide img {
+  float: left;
+  margin: 0 80px 0 0;
+  width: 25vw;
 }
 
 .size-grid-in-slide {

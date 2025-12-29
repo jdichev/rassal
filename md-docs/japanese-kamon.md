@@ -33,11 +33,29 @@ Kamon are celebrated globally for their "less is more" aesthetic.
 ---
 
 # Famous Historical Kamon
-**Symbols of Power and Influence**
+#### Symbols of Power and Influence
 
-* **The Tokugawa Clan (*Mitsuba Aoi*):** The Triple Hollyhock. This crest was so revered that unauthorized use was a punishable crime during the Shogunate.
-* **The Oda Clan (*Oda Mokkou*):** The Quince. Associated with Oda Nobunaga; the five-petal design symbolizes protection and fertility.
-* **The Government of Japan (*Go-Shichi no Kiri*):** The 5-7 Paulownia. Originally a clan crest, it is now the official emblem of the Prime Minister and the Cabinet.
+![The Tokugawa Clan](../data/TOKUGAWA.svg "The Triple Hollyhock")
+
+**The Tokugawa Clan (*Mitsuba Aoi*):** The Triple Hollyhock. This crest was so revered that unauthorized use was a punishable crime during the Shogunate.
+
+---
+
+# Famous Historical Kamon
+#### Symbols of Power and Influence
+
+![The Oda Clan](../data/ODA.svg "The Quince")
+
+**The Oda Clan (*Oda Mokkou*):** The Quince. Associated with Oda Nobunaga; the five-petal design symbolizes protection and fertility.
+
+---
+
+# Famous Historical Kamon
+### Symbols of Power and Influence
+
+![The Government of Japan](../data/TOYOTOMI.svg "The 5-7 Paulownia")
+
+**The Government of Japan (*Go-Shichi no Kiri*):** The 5-7 Paulownia. Originally a clan crest, it is now the official emblem of the Prime Minister and the Cabinet.
 
 ---
 
