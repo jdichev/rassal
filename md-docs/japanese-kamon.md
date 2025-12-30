@@ -37,7 +37,9 @@ Kamon are celebrated globally for their "less is more" aesthetic.
 
 ![The Tokugawa Clan](../data/TOKUGAWA.svg "The Triple Hollyhock")
 
-**The Tokugawa Clan (*Mitsuba Aoi*):** The Triple Hollyhock. This crest was so revered that unauthorized use was a punishable crime during the Shogunate.
+**The Tokugawa Clan (*Mitsuba Aoi*):** The Triple Hollyhock.
+
+This crest was so revered that unauthorized use was a punishable crime during the Shogunate.
 
 ---
 
@@ -46,7 +48,9 @@ Kamon are celebrated globally for their "less is more" aesthetic.
 
 ![The Oda Clan](../data/ODA.svg "The Quince")
 
-**The Oda Clan (*Oda Mokkou*):** The Quince. Associated with Oda Nobunaga; the five-petal design symbolizes protection and fertility.
+**The Oda Clan (*Oda Mokkou*):** The Quince.
+
+Associated with Oda Nobunaga; the five-petal design symbolizes protection and fertility.
 
 ---
 
@@ -55,7 +59,9 @@ Kamon are celebrated globally for their "less is more" aesthetic.
 
 ![The Government of Japan](../data/TOYOTOMI.svg "The 5-7 Paulownia")
 
-**The Government of Japan (*Go-Shichi no Kiri*):** The 5-7 Paulownia. Originally a clan crest, it is now the official emblem of the Prime Minister and the Cabinet.
+**The Government of Japan (*Go-Shichi no Kiri*):** The 5-7 Paulownia.
+
+Originally a clan crest, it is now the official emblem of the Prime Minister and the Cabinet.
 
 ---
 
