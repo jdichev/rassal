@@ -110,6 +110,45 @@
     window.handleResize();
   });
 
+async function injectSVGs() {
+  // 1. Select all images ending in .svg
+  const svgImages = document.querySelectorAll('img[src$=".svg"]');
+
+  for (const img of svgImages) {
+    const imgURL = img.src;
+    const imgID = img.id;
+    const imgClass = img.className;
+
+    try {
+      // 2. Fetch the SVG file content
+      const response = await fetch(imgURL);
+      const data = await response.text();
+
+      // 3. Parse the text into an SVG DOM element
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data, "image/svg+xml");
+      const svg = xmlDoc.querySelector("svg");
+
+      if (svg) {
+        // 4. Transfer attributes from the original <img> to the new <svg>
+        if (imgID) svg.id = imgID;
+        if (imgClass) svg.setAttribute("class", imgClass + " replaced-svg");
+        
+        // Remove some attributes
+        svg.removeAttribute("width");
+        svg.removeAttribute("height");
+
+        // 5. Replace the image with the new inline SVG
+        img.replaceWith(svg);
+      }
+    } catch (error) {
+      console.error(`Failed to inject SVG from ${imgURL}:`, error);
+    }
+  }
+}
+
+
+
   w.onload = function () {
     viewPortWidth = d.documentElement.clientWidth;
     viewPortHeight = d.documentElement.clientHeight;
@@ -121,5 +160,7 @@
     }
 
     processHash();
+
+    injectSVGs();
   };
 })(window, document);
