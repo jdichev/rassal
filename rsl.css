@@ -1,8 +1,8 @@
 :root {
   --bg-color: #222;
   --text-color: #ddd;
-  --slide-padding-x: 72px;
-  --slide-padding-y: 64px;
+  --slide-padding-x: 88px;
+  --slide-padding-y: 72px;
   --heading-color-1: #5b955f;
   --heading-color-2: #7c9ced;
   --graphic-color-1: #f17bb1;
@@ -20,7 +20,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   position: relative;
   user-select: none;
-  cursor: default;
+  cursor: default;  
 }
 
 html,
