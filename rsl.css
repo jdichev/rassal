@@ -14,6 +14,7 @@
     --bg-color: #eaeef7;
     --text-color: #333;
     --any-link-color: #5149af;
+    --graphic-color-1: #d85f96;
   }
 }
 
@@ -23,6 +24,7 @@ body {
   position: relative;
   user-select: none;
   cursor: default;
+  font-size: 1.25rem;
 }
 
 html,
