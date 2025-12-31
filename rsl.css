@@ -119,3 +119,45 @@ li {
 code {
   font-family: Menlo, monospace;
 }
+
+#rsl-nav-overlay {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px 20px;
+  border-radius: 8px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+#rsl-nav-overlay:hover {
+  opacity: 1;
+}
+
+#rsl-prev-btn,
+#rsl-next-btn {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+#rsl-prev-btn.inactive,
+#rsl-next-btn.inactive {
+  visibility: hidden;
+}
+
+#rsl-slide-counter {
+  color: var(--text-color);
+  font-size: 1rem;
+  min-width: 60px;
+  text-align: center;
+}
