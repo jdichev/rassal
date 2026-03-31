@@ -13,7 +13,7 @@
 
 ---
 
-## Key Movements
+## Key Movements: Part 1
 
 - **Modernism** (early 20th century)
     - Focus on experimentation, stream of consciousness, and breaking traditional forms.
@@ -24,6 +24,10 @@
     - Flourishing of African American literature, music, and art.
     - Notable authors: Langston Hughes, Zora Neale Hurston, Claude McKay.
 
+---
+
+## Key Movements: Part 2
+
 - **Existentialism & Absurdism** (mid-century)
     - Explored meaninglessness, freedom, and the absurd.
     - Notable authors: Albert Camus, Jean-Paul Sartre, Samuel Beckett.
@@ -32,26 +36,93 @@
     - Focused on the effects of colonization and the search for identity.
     - Notable authors: Chinua Achebe, Salman Rushdie, Ngũgĩ wa Thiong'o.
 
+---
+
+## Key Movements: Part 3
+
 - **Postmodernism** (mid-late 20th century)
     - Emphasis on irony, metafiction, and questioning reality.
     - Notable authors: Thomas Pynchon, Margaret Atwood, Kurt Vonnegut, Don DeLillo.
 
 ---
 
-## Influential Authors & Works
+## Franz Kafka: The Absurd and the Bureaucratic
 
-> "A book must be the axe for the frozen sea within us." — Franz Kafka
+- **The Metamorphosis** (1915, Prague, Austria-Hungary)
+    - A novella about a salesman who wakes up transformed into a giant insect. It explores themes of alienation and familial burden.
+- **The Trial** (1925, published posthumously)
+    - Follows Josef K., a man arrested and prosecuted by a remote, inaccessible authority, with the nature of his crime never revealed.
 
-- **Franz Kafka** – "The Metamorphosis", "The Trial"
-- **James Joyce** – "Ulysses", "A Portrait of the Artist as a Young Man"
-- **Virginia Woolf** – "To the Lighthouse", "Mrs. Dalloway"
-- **George Orwell** – "1984", "Animal Farm"
-- **Gabriel García Márquez** – "One Hundred Years of Solitude"
-- **Toni Morrison** – "Beloved", "Song of Solomon"
-- **Samuel Beckett** – "Waiting for Godot"
-- **Chinua Achebe** – "Things Fall Apart"
-- **Albert Camus** – "The Stranger"
-- **Margaret Atwood** – "The Handmaid's Tale"
+---
+
+## James Joyce: Redefining the Novel
+
+- **Ulysses** (1922, Paris/Dublin)
+    - A landmark of Modernism, it parallels Homer's *Odyssey* through the experiences of Leopold Bloom in Dublin over a single day (June 16, 1904).
+- **A Portrait of the Artist as a Young Man** (1916)
+    - A semi-autobiographical *Bildungsroman* tracing the religious and intellectual awakening of Stephen Dedalus.
+
+---
+
+## Virginia Woolf: Stream of Consciousness
+
+- **Mrs. Dalloway** (1925, London)
+    - Describes a day in the life of Clarissa Dalloway as she prepares for a party. It uses stream of consciousness to explore the inner lives of its characters.
+- **To the Lighthouse** (1927)
+    - Centered on the Ramsay family's visits to the Isle of Skye, it focuses on philosophical introspection and the passage of time.
+
+---
+
+## George Orwell: Political Allegory
+
+- **1984** (1949, London/Isle of Jura)
+    - A dystopian novel depicting a totalitarian regime led by "Big Brother." It introduced concepts like "Thought Police" and "Doublethink."
+- **Animal Farm** (1945)
+    - An allegorical novella reflecting the events leading up to the Russian Revolution and the Stalinist era of the Soviet Union.
+
+---
+
+## Gabriel García Márquez: Magical Realism
+
+- **One Hundred Years of Solitude** (1967, Colombia/Mexico)
+    - The multi-generational story of the Buendía family in the fictional town of Macondo. It is a masterpiece of magical realism, blending the mundane with the miraculous.
+
+---
+
+## Toni Morrison: The African American Experience
+
+- **Beloved** (1987, USA)
+    - Set after the American Civil War, it tells the story of a family of former slaves whose house is haunted by a malevolent spirit. It won the Pulitzer Prize for Fiction.
+- **Song of Solomon** (1977)
+    - A novel following the life of Macon "Milkman" Dead III, exploring themes of identity, flight, and heritage.
+
+---
+
+## Samuel Beckett: The Theatre of the Absurd
+
+- **Waiting for Godot** (1952, Paris)
+    - A play in which two characters, Vladimir and Estragon, wait for the arrival of someone named Godot, who never arrives. It is a foundational work of the Theatre of the Absurd.
+
+---
+
+## Chinua Achebe: African Literature
+
+- **Things Fall Apart** (1958, Nigeria)
+    - A classic of modern African literature, it depicts the life of Okonkwo and the impact of British colonialism and Christian missionaries on Igbo society.
+
+---
+
+## Albert Camus: Existentialism
+
+- **The Stranger** (1942, French Algeria)
+    - Follows Meursault, a detached settler in Algeria who kills an Arab man. It explores Camus's philosophy of the absurd and the indifference of the universe.
+
+---
+
+## Margaret Atwood: Speculative Fiction
+
+- **The Handmaid's Tale** (1985, Canada)
+    - A dystopian novel set in a near-future New England, in a patriarchal, totalitarian theocratic state that has overthrown the United States government.
 
 ---
 
