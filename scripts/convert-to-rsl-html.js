@@ -31,9 +31,16 @@ async function readMarkdownFiles(inputDir, outputDir) {
         for (const file of markdownFiles) {
             const fileInfo = path.parse(file);
             const filePath = path.join(inputDir, file);
-            const content = await fs.readFile(filePath, 'utf-8');
+            let content = await fs.readFile(filePath, 'utf-8');
 
             console.log(`Processing: ${file}`);
+
+            let bodyClass = 'auto';
+            const bodyClassMatch = content.match(/<!--\s*body-class:\s*(.*?)\s*-->/);
+            if (bodyClassMatch) {
+                bodyClass = bodyClassMatch[1];
+                content = content.replace(bodyClassMatch[0], '');
+            }
 
             const fileParts = content.split('\n---\n');
 
@@ -46,12 +53,18 @@ async function readMarkdownFiles(inputDir, outputDir) {
                     continue;
                 }
 
-                const htmlContent = marked.parse(part);
-                slides.push(`<div class="rsl-slide">${htmlContent}</div>`);
+                let slideGroup = '';
+                const groupMatch = part.match(/<!--\s*rsl-group:\s*(.*?)\s*-->/);
+                if (groupMatch) {
+                    slideGroup = ` data-rsl-group="${groupMatch[1]}"`;
+                }
+
+                const htmlContent = marked.parse(part.replace(/<!--\s*rsl-group:\s*(.*?)\s*-->/g, ''));
+                slides.push(`<div class="rsl-slide"${slideGroup}>${htmlContent}</div>`);
             }
 
             const resultContent = await prettier.format(
-                template.replace('{{slides}}', slides.join('\n')),
+                template.replace('{{slides}}', slides.join('\n')).replace('{{bodyClass}}', bodyClass),
                 { parser: "html" }
             );
 

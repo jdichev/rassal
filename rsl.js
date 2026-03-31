@@ -8,11 +8,19 @@
     viewPortWidth,
     viewPortHeight;
 
-  function fitSlideToViewport(slideElement) {
+  var groupFontSizes = {};
+
+  function getOptimalFontSize(slideElement) {
     if (slideElement.classList.contains('skip-fit')) {
-      console.log('skipping fit for slide ', slideElement);
-      return
+      return null;
     }
+
+    // Temporarily make slide visible to calculate size accurately
+    var originalVisibility = slideElement.style.visibility;
+    var originalDisplay = slideElement.style.display;
+
+    slideElement.style.visibility = 'hidden';
+    slideElement.style.display = 'block';
 
     var slideStyle = slideElement.style;
     var currentFontSize = 1;
@@ -26,14 +34,72 @@
       currentFontSize += step;
       slideStyle.fontSize = currentFontSize + fontSizeUnit;
 
-      if (viewPortHeight < slideElement.offsetHeight || viewPortWidth < slideElement.offsetWidth) {
+      if (
+        viewPortHeight < slideElement.offsetHeight ||
+        viewPortWidth < slideElement.offsetWidth
+      ) {
         currentFontSize -= step;
-        slideStyle.fontSize = currentFontSize + fontSizeUnit;
-        // slideStyle.marginTop = ((viewPortHeight - slideElement.offsetHeight) / 2) + 'px';
         break;
       }
-
       iterations++;
+    }
+
+    // Restore original styles
+    slideElement.style.visibility = originalVisibility;
+    slideElement.style.display = originalDisplay;
+
+    return currentFontSize;
+  }
+
+  function fitSlideToViewport(slideElement) {
+    var group = slideElement.getAttribute('data-rsl-group');
+
+    // Auto-grouping logic
+    if (!group && d.body.classList.contains('auto-grouping')) {
+      var allSlides = Array.from(slides);
+      var index = allSlides.indexOf(slideElement);
+      if (index === 0) {
+        group = 'rsl-auto-initial';
+      } else {
+        group = 'rsl-auto-main';
+      }
+    }
+
+    var fontSize;
+
+    if (group) {
+      if (groupFontSizes[group] !== undefined) {
+        fontSize = groupFontSizes[group];
+      } else {
+        var groupSlides = d.querySelectorAll(
+          '.rsl-slide[data-rsl-group="' + group + '"]'
+        );
+
+        // If auto-grouping, we need to collect the slides differently
+        if (groupSlides.length === 0 && group.startsWith('rsl-auto-')) {
+          if (group === 'rsl-auto-initial') {
+            groupSlides = [slides[0]];
+          } else {
+            groupSlides = Array.from(slides).slice(1);
+          }
+        }
+
+        var minFontSize = Infinity;
+        for (var i = 0; i < groupSlides.length; i++) {
+          var f = getOptimalFontSize(groupSlides[i]);
+          if (f !== null && f < minFontSize) {
+            minFontSize = f;
+          }
+        }
+        groupFontSizes[group] = minFontSize;
+        fontSize = minFontSize;
+      }
+    } else {
+      fontSize = getOptimalFontSize(slideElement);
+    }
+
+    if (fontSize !== null && fontSize !== Infinity) {
+      slideElement.style.fontSize = fontSize + fontSizeUnit;
     }
   }
 
@@ -44,17 +110,14 @@
 
     // re-assign slide to be pointing to current one
     slide = slides[index];
-    style = slide.style;
-
     fitSlideToViewport(slide);
-
     slide.classList.add('rsl-visible');
   }
 
   function processHash() {
     var hash = d.location.hash;
 
-    slideIndex = +hash.replace('#', '');
+    slideIndex = +hash.replace('#', '') || 0;
     hash = '' + slideIndex;
 
     showSlide(slideIndex);
@@ -99,10 +162,10 @@
     viewPortWidth = d.documentElement.clientWidth;
     viewPortHeight = d.documentElement.clientHeight;
 
+    groupFontSizes = {};
+
     // re-assign slide to be pointing to current one
     slide = document.querySelector('.rsl-visible');
-    style = slide.style;
-
     fitSlideToViewport(slide);
   }
 

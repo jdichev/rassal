@@ -8,7 +8,7 @@
   <script src="../rsl.js"></script>
 </head>
 
-<body class="auto">
+<body class="{{bodyClass}}">
 
   {{slides}}
 

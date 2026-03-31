@@ -1,3 +1,4 @@
+<!-- body-class: auto auto-grouping -->
 # 20th Century Literature: A Comprehensive Presentation
 
 ---
@@ -13,6 +14,7 @@
 
 ---
 
+<!-- rsl-group: key-movements -->
 ## Key Movements: Part 1
 
 - **Modernism** (early 20th century)
@@ -26,6 +28,7 @@
 
 ---
 
+<!-- rsl-group: key-movements -->
 ## Key Movements: Part 2
 
 - **Existentialism & Absurdism** (mid-century)
@@ -38,6 +41,7 @@
 
 ---
 
+<!-- rsl-group: key-movements -->
 ## Key Movements: Part 3
 
 - **Postmodernism** (mid-late 20th century)
@@ -46,6 +50,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Franz Kafka: The Absurd and the Bureaucratic
 
 - **The Metamorphosis** (1915, Prague, Austria-Hungary)
@@ -55,6 +60,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## James Joyce: Redefining the Novel
 
 - **Ulysses** (1922, Paris/Dublin)
@@ -64,6 +70,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Virginia Woolf: Stream of Consciousness
 
 - **Mrs. Dalloway** (1925, London)
@@ -73,6 +80,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## George Orwell: Political Allegory
 
 - **1984** (1949, London/Isle of Jura)
@@ -82,6 +90,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Gabriel García Márquez: Magical Realism
 
 - **One Hundred Years of Solitude** (1967, Colombia/Mexico)
@@ -89,6 +98,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Toni Morrison: The African American Experience
 
 - **Beloved** (1987, USA)
@@ -98,6 +108,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Samuel Beckett: The Theatre of the Absurd
 
 - **Waiting for Godot** (1952, Paris)
@@ -105,6 +116,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Chinua Achebe: African Literature
 
 - **Things Fall Apart** (1958, Nigeria)
@@ -112,6 +124,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Albert Camus: Existentialism
 
 - **The Stranger** (1942, French Algeria)
@@ -119,6 +132,7 @@
 
 ---
 
+<!-- rsl-group: authors -->
 ## Margaret Atwood: Speculative Fiction
 
 - **The Handmaid's Tale** (1985, Canada)
